@@ -1,0 +1,60 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+ <div class="oj-hybrid-padding">
+  
+  <oj-c-form-layout
+    id="formLayoutOptions"
+    max-columns="1"
+    direction="row"
+    user-assistance-density="compact">
+    <h1>Username</h1>
+    <oj-c-input-text
+      id="text-input"
+      raw-value="{{username}}"
+      label-hint="Enter Username"
+      label-edge="inside"></oj-c-input-text>
+    <h1>Password</h1>
+    <oj-c-input-password label-hint="Enter Password"></oj-c-input-password>
+    <h1>Gender</h1>
+    <div id="radioset-container">
+      <oj-c-radioset
+        id="radiosetBasicDemoId"
+        label-hint="Select Gender"
+        options="[[colorOptions]]"
+        value="{{currentColor}}">
+      </oj-c-radioset>
+  
+      <h1>Birth Date</h1>
+      <oj-input-date-time
+                value="{{value}}"
+                converter="[[timeFullConverter]]"
+                label-hint=""></oj-input-date-time>
+      <div>
+      <h1>Job Profile</h1>
+      <oj-c-select-single
+                id="f12"
+                label-hint="Select Job Profile"
+                data="[[browsersDP]]"
+                item-text="label"></oj-c-select-single> 
+      </div>
+      <oj-c-checkbox id="enabledCheckboxOn" value="false">Remember me</oj-c-checkbox>
+      <div>
+        <oj-c-button
+        id="save"
+        chroming="outlined"
+        label="Save Draft">
+      </oj-c-button>
+      </div>
+      <div>
+        <h6>Progress completed</h6>
+      <oj-progress-bar
+              id="progressBar"
+              aria-label="basic progress bar"
+              value="[[indeterminate().length > 0 ? -1 : progressValue]]"></oj-progress-bar>
+      </div>
+    </div>
+  </oj-c-form-layout>
+</div>
